@@ -1,6 +1,6 @@
 {
   "name": "picgo-plugin-slim",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "基于 sharp 的 PicGo 上传前图片转换/缩放/压缩插件",
   "main": "src/index.js",
   "license": "MIT",
