@@ -12,12 +12,9 @@ PicGo 上传前图片处理插件，基于 [sharp](https://github.com/lovell/sha
 
 ## 安装
 
-```bash
-cd "$HOME/Library/Application Support/picgo"   # Windows: %APPDATA%\picgo
-npm install picgo-plugin-slim --save
-```
+在 PicGo 插件设置里搜索 `slim` 安装，或者手动装到 PicGo 的 baseDir：
 
-或在 GUI 插件设置里搜索 `slim` 安装，然后重启 PicGo 并启用插件。
+装完重启 PicGo，在插件设置里启用。
 
 > 必须装到 PicGo 的 baseDir 下，`npm i -g` 装全局不会生效。
 
@@ -56,9 +53,3 @@ npm install picgo-plugin-slim --save
 - 单张处理失败只记日志，按原图继续上传
 - gif / svg / heic 不处理
 - 透明通道保留
-
-## 开发
-
-```bash
-npm install && npm test
-```
