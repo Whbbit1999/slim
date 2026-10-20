@@ -1,0 +1,30 @@
+{
+  "name": "picgo-plugin-slim",
+  "version": "1.0.0",
+  "description": "基于 sharp 的 PicGo 上传前图片转换/缩放/压缩插件",
+  "main": "src/index.js",
+  "license": "MIT",
+  "author": "whbbit1999 <luckyboy_dong@sina.com>",
+  "keywords": [
+    "picgo",
+    "picgo-plugin",
+    "picgo-gui-plugin",
+    "sharp",
+    "image",
+    "compress",
+    "webp"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "sharp": "^0.35.5"
+  }
+}
