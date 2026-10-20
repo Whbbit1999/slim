@@ -2,6 +2,8 @@
 
 PicGo 上传前图片处理插件，基于 [sharp](https://github.com/lovell/sharp)。上传前可以转换格式、缩放尺寸、压缩质量。
 
+**其他语言：** [简体中文](https://github.com/Whbbit1999/slim/blob/master/README.md) · [繁體中文](https://github.com/Whbbit1999/slim/blob/master/README.zh-TW.md) · [English](https://github.com/Whbbit1999/slim/blob/master/README.en.md) · [한국어](https://github.com/Whbbit1999/slim/blob/master/README.ko.md) · [日本語](https://github.com/Whbbit1999/slim/blob/master/README.ja.md)
+
 ## 能做什么
 
 1. **格式转换** —— 选定哪些源格式需要处理（png / jpg / webp / avif / tiff），统一转成 WebP / AVIF / JPEG / PNG / TIFF
@@ -12,13 +14,9 @@ PicGo 上传前图片处理插件，基于 [sharp](https://github.com/lovell/sha
 
 ## 安装
 
-在 PicGo 插件设置里搜索 `slim` 安装，或者手动装到 PicGo 的 baseDir：
+在 PicGo 插件设置里搜索 `slim` 安装，或者手动装到 PicGo 的 baseDir 中。
 
 装完重启 PicGo，在插件设置里启用。
-
-> 必须装到 PicGo 的 baseDir 下，`npm i -g` 装全局不会生效。
-
-插件注册的是 `beforeUpload` 钩子，启用即生效，不需要切换 transformer。
 
 ## 配置
 
@@ -53,3 +51,15 @@ PicGo 上传前图片处理插件，基于 [sharp](https://github.com/lovell/sha
 - 单张处理失败只记日志，按原图继续上传
 - gif / svg / heic 不处理
 - 透明通道保留
+- 配置界面文案跟随 PicGo 语言：简体中文 / 繁體中文 / English / 한국어 / 日本語
+
+## 开发
+
+```bash
+npm install
+npm test
+```
+
+## 许可证
+
+[MIT](https://github.com/Whbbit1999/slim/blob/master/LICENSE) © whbbit1999
