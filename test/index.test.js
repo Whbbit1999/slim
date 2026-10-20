@@ -123,3 +123,29 @@ test('config schema 的默认值都在 choices 里（GUI 下拉才能正确回�
     }
   }
 })
+
+test('config 文案随 ctx.i18n 切换语言', () => {
+  const store = { 'zh-CN': {}, 'zh-TW': {}, en: {}, ko: {}, ja: {} }
+  const ctx = makeCtx({})
+  ctx.i18n = {
+    addLocale: (lang, pack) => { store[lang] = { ...store[lang], ...pack } },
+    translate: (key) => store[ctx.lang][key] || key
+  }
+  ctx.helper = { beforeUploadPlugins: { register: () => {} } }
+  ctx.lang = 'zh-CN'
+  const p = plugin(ctx)
+  p.register()
+
+  assert.strictEqual(p.config(ctx).find((f) => f.name === 'quality').alias, '质量 1-100')
+  ctx.lang = 'en'
+  assert.strictEqual(p.config(ctx).find((f) => f.name === 'quality').alias, 'Quality 1-100')
+  assert.deepStrictEqual(
+    p.config(ctx).find((f) => f.name === 'resizeMode').choices.map((c) => c.name),
+    ['Original size (no resizing)', 'Limit longest edge', 'Limit width', 'Limit height']
+  )
+  ctx.lang = 'ko'
+  assert.strictEqual(p.config(ctx).find((f) => f.name === 'quality').alias, '품질 1-100')
+  ctx.lang = 'ja'
+  assert.strictEqual(p.config(ctx).find((f) => f.name === 'quality').alias, '品質 1-100')
+  assert.strictEqual(p.config(ctx).find((f) => f.name === 'convertTo').choices[0].name, '変換しない（元の形式のまま）')
+})
